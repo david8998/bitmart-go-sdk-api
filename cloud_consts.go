@@ -16,6 +16,13 @@ type CloudResponse struct {
 	limit      RateLimit
 }
 
+func (cr *CloudResponse) GetHttpStatus() int {
+	return cr.httpStatus
+}
+func (cr *CloudResponse) GetResponse() string {
+	return cr.response
+}
+
 type RateLimit struct {
 	remaining int
 	limit     int
