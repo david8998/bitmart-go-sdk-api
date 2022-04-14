@@ -96,7 +96,7 @@ func (cloudClient *CloudClient) PostSpotSubmitOrder(order Order) (*CloudResponse
 }
 
 // batch_orders
-func (cloudClient *CloudClient) PostSpotBatchOrders(orderParams [1]Order) (*CloudResponse, error) {
+func (cloudClient *CloudClient) PostSpotBatchOrders(orderParams []Order) (*CloudResponse, error) {
 	params := NewParams()
 	params["orderParams"] = orderParams
 	return cloudClient.requestWithParams(POST, API_SPOT_BATCH_ORDERS_URL, params, SIGNED)
