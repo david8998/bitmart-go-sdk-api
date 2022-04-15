@@ -70,12 +70,13 @@ func (cloudClient *CloudClient) GetSpotWallet() (*CloudResponse, error) {
 
 // submit_order
 type Order struct {
-	Symbol   string `json:"symbol"`
-	Side     string `json:"side"`
-	Type     string `json:"type"`
-	Size     string `json:"size"`
-	Price    string `json:"price"`
-	Notional string `json:"notional"`
+	Symbol        string `json:"symbol"`
+	Side          string `json:"side"`
+	Type          string `json:"type"`
+	Size          string `json:"size"`
+	Price         string `json:"price"`
+	Notional      string `json:"notional"`
+	ClientOrderId string `json:"clientOrderId"`
 }
 
 func (cloudClient *CloudClient) PostSpotSubmitOrder(order Order) (*CloudResponse, error) {
